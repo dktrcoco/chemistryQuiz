@@ -1,0 +1,28 @@
+Assignment 4 Pseudo-Code
+
+I want a website that when first loaded, displays the instructions of a multiple choice quiz.
+
+There will be a link that will take the user to the recorded scores for previous quiz-takers.
+
+There will be a START button that when clicked will display the first question and begin the timer.
+
+There will be buttons for each multiple choice option.
+
+When any button is clicked, the page will indicate if the question was answered correctly or not.
+
+The next question will immediately display after submitting the answer to the previous question.
+
+When an incorrect answer is chosen, 10 seconds will be deducted from the timer.
+
+When a correct answer is chosen, 10 points will be added to the score.
+
+When time runs out, the quiz will end and the user will be prompted to enter their initials for the Leaderboard.
+
+When the quiz is completed, the user will be prompted to enter their initials for the leaderboard.
+
+After entering initials, the leaderboard will be displayed as a list of initials with corresponding scores.
+
+A link will be available to retake the quiz.
+
+
+

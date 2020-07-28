@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <title>Leaderboard</title>
+    <style>
+        #start-button,
+        h1,
+        #quiz,
+        .input-group,
+        .inits-div,
+        .input-group,
+        p,
+        .init-count {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <header>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="test.html">Quiz</a></li>
+                </ul>
+            </nav>
+            <h1>High Scores</h1>
+        </header>
+
+        <div class="inits-div">
+            <p>Players: <span id="init-count">0</span></p>
+            <ul id="init-list"></ul>
+        </div>
+
+        <script>
+
+            function hideSubmit() {
+                if (submit.style.display === "none") {
+                    submit.style.display = "block";
+                }
+                else {
+                    submit.style.display = "none";
+                }
+            };
+
+            var userInit = document.querySelector("#submit");
+            var initCountSpan = document.querySelector("#init-count");
+            var initList = document.querySelector("#init-list");
+            var initsForm = document.querySelector("#inits-form");
+            var initsInput = document.querySelector("#inits-text");
+
+            var initScores = []; //array to populate with initials
+
+            storedInfo();
+
+            function storedInfo() {
+                var storedInits = JSON.parse(localStorage.getItem("highScores"));
+
+                if (storedInits !== null) {
+                    initScores = storedInits;
+                }
+
+                renderInits();
+            }
+
+            function renderInits() {
+
+                initList.innerHTML = "";
+                initCountSpan.textContent = initScores.length;
+
+                for (var i = 0; i < initScores.length; i++) {
+                    var initials = initScores[i];
+
+                    var li = document.createElement("li");
+                    li.textContent = initials.initials + ": " + initials.score;
+                    li.setAttribute("data-index", i);
+
+                    initList.appendChild(li);
+                }
+            }
+
+            function StoreInits() {
+                localStorage.setItem("initScores", JSON.strigify(initScores));
+            }
+
+        </script>
+</body>
+
+</html>
