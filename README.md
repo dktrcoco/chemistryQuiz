@@ -9,6 +9,7 @@ I made this online quiz to experiment with various aspects of web development.
 
 Screenshots:
 
+There is a folder including screenshots of the page in use as well as screenshots of important parts of the js and html.
 
 How to use:
 
